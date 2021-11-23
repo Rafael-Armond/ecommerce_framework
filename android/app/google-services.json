@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "395916424432",
+    "project_id": "testframe-f5b3e",
+    "storage_bucket": "testframe-f5b3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:395916424432:android:f836381d7b7edfb1c87e35",
+        "android_client_info": {
+          "package_name": "br.com.testeFrame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "395916424432-80f2m32iasc1j96l2uj5n8ft0cludu2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApF1k_sKe18MEqPUaiH-7gBlUTy6PVvxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "395916424432-80f2m32iasc1j96l2uj5n8ft0cludu2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
