@@ -45,8 +45,8 @@ class ProductItem extends StatelessWidget {
               ),
               child: Image.network(
                 product.image,
-                scale: Get.size.aspectRatio * 0.7,
-                height: Get.size.height * 0.1,
+                scale: Get.size.aspectRatio * 0.65,
+                height: Get.size.height * 0.07,
                 filterQuality: FilterQuality.none,
               ),
             ),

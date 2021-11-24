@@ -25,27 +25,6 @@ class ShoppingCartItem extends StatelessWidget {
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                  icon: const Icon(Icons.chevron_left, size: 30),
-                  onPressed: cartItem.quantity > 1
-                      ? () => _cartController.decreaseItemQuantity(cartItem)
-                      : null),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  cartItem.quantity.toString(),
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-              ),
-              IconButton(
-                  icon: const Icon(Icons.chevron_right, size: 30),
-                  onPressed: () =>
-                      _cartController.increaseItemQuantity(cartItem)),
-            ],
-          ),
           IconButton(
             icon: const Icon(Icons.delete, color: Colors.red),
             onPressed: () => _cartController.removeItemFromCart(cartItem),

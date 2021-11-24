@@ -22,12 +22,6 @@ class Utils {
       build: (pw.Context context) => pw.Center(
           child: pw.Column(
         children: [
-          pw.Padding(
-            padding: const pw.EdgeInsets.only(top: 18, bottom: 60),
-            child: pw.Text('LISTA',
-                style:
-                    pw.TextStyle(fontSize: 32, fontWeight: pw.FontWeight.bold)),
-          ),
           pw.Container(
             padding: const pw.EdgeInsets.all(20.0),
             child: pw.Table(children: [

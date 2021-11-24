@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductsController extends GetxController {
-  final ProductsRepository _productsRepository;
   ProductsController(this._productsRepository);
+  final ProductsRepository _productsRepository;
 
-  TextEditingController searchProductController = TextEditingController();
   Rx<String> searchProductTerm = ''.obs;
 
   RxList<ProductModel> allProducts = <ProductModel>[].obs;
@@ -27,6 +26,5 @@ class ProductsController extends GetxController {
   void clearController() {
     searchProductTerm = ''.obs;
     allProducts = <ProductModel>[].obs;
-    searchProductController.clear();
   }
 }

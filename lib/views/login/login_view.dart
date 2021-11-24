@@ -1,5 +1,6 @@
 import 'package:flutter_firebase_ecommerce/controllers/authentication_controller.dart';
 import 'package:flutter_firebase_ecommerce/views/registration/registration_view.dart';
+import 'package:flutter_firebase_ecommerce/views/shared/util/util.dart';
 import 'package:flutter_firebase_ecommerce/views/shared/widgets/loading_widget.dart';
 import 'package:flutter_firebase_ecommerce/controllers/products_controller.dart';
 import 'package:flutter_firebase_ecommerce/views/shared/widgets/text_form.dart';
@@ -56,16 +57,20 @@ class LoginView extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                       shadowColor: Colors.black,
                     ),
-                    onPressed: _authController.isEmailSenhaPreenchidos
+                    onPressed: _authController.email.value.isNotEmpty &&
+                            _authController.password.value.isNotEmpty
                         ? () async {
                             LoadingWidget.show(context);
-                            await _authController.signIn().then((sucess) async {
-                              if (sucess) {
-                                await _productsController.getAllProducts();
-                                Get.off(() => ProductsView());
-                              }
-                            });
-                            LoadingWidget.suppress();
+                            try {
+                              await _authController.signIn();
+                              Get.off(() => ProductsView());
+                            } catch (e) {
+                              Utils.showErrorSnackbar(
+                                  title: 'Erro ao tentar logar',
+                                  message: 'Confira suas credenciais');
+                            } finally {
+                              LoadingWidget.hide();
+                            }
                           }
                         : null,
                   ),

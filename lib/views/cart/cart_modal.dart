@@ -1,4 +1,4 @@
-import 'package:flutter_firebase_ecommerce/views/cart/shopping_cart_item.dart';
+import 'package:flutter_firebase_ecommerce/views/cart/cart_item_view.dart';
 import 'package:flutter_firebase_ecommerce/controllers/cart_controller.dart';
 import 'package:flutter_firebase_ecommerce/views/shared/util/util.dart';
 import 'package:flutter/material.dart';

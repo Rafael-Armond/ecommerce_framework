@@ -2,7 +2,7 @@ import 'package:flutter_firebase_ecommerce/controllers/authentication_controller
 import 'package:flutter_firebase_ecommerce/views/products/search_text_form_field.dart';
 import 'package:flutter_firebase_ecommerce/views/shared/widgets/cart_buttom.dart';
 import 'package:flutter_firebase_ecommerce/controllers/products_controller.dart';
-import 'package:flutter_firebase_ecommerce/views/cart/shopping_cart_modal.dart';
+import 'package:flutter_firebase_ecommerce/views/cart/cart_modal.dart';
 import 'package:flutter_firebase_ecommerce/views/products/product_item_.dart';
 import 'package:flutter_firebase_ecommerce/controllers/cart_controller.dart';
 import 'package:flutter_firebase_ecommerce/views/login/login_view.dart';
@@ -55,8 +55,6 @@ class ProductsView extends StatelessWidget {
             color: Colors.white,
           ),
           onPressed: () {
-            _productsController.clearController();
-            _cartController.clearController();
             _authController.signOut();
             Get.off(() => LoginView());
           },

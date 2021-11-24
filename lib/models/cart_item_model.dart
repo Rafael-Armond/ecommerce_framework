@@ -1,14 +1,14 @@
 import 'package:flutter_firebase_ecommerce/models/product_model.dart';
 
 class CartItemModel {
+  String id;
   ProductModel product;
   int quantity;
   double totalItemPrice;
-  String id;
 
   CartItemModel(
-      {required this.product,
+      {required this.id,
+      required this.product,
       required this.quantity,
-      required this.totalItemPrice,
-      required this.id});
+      required this.totalItemPrice});
 }

@@ -28,23 +28,23 @@ class CartController extends GetxController {
   Rx<double> get totalCartPrice =>
       cartItens.fold<double>(0, (prev, item) => prev + item.totalItemPrice).obs;
 
-  void increaseItemQuantity(CartItemModel cartItem) {
-    int itemIndex = cartItens.indexWhere((item) => item.id == cartItem.id);
-    if (itemIndex != -1) {
-      cartItens[itemIndex].quantity++;
-      cartItens[itemIndex].totalItemPrice += cartItem.product.price;
-      cartItens.refresh();
-    }
-  }
+  // void increaseItemQuantity(CartItemModel cartItem) {
+  //   int itemIndex = cartItens.indexWhere((item) => item.id == cartItem.id);
+  //   if (itemIndex != -1) {
+  //     cartItens[itemIndex].quantity++;
+  //     cartItens[itemIndex].totalItemPrice += cartItem.product.price;
+  //     cartItens.refresh();
+  //   }
+  // }
 
-  void decreaseItemQuantity(CartItemModel cartItem) {
-    int itemIndex = cartItens.indexWhere((item) => item.id == cartItem.id);
-    if (itemIndex != -1) {
-      cartItens[itemIndex].quantity--;
-      cartItens[itemIndex].totalItemPrice -= cartItem.product.price;
-      cartItens.refresh();
-    }
-  }
+  // void decreaseItemQuantity(CartItemModel cartItem) {
+  //   int itemIndex = cartItens.indexWhere((item) => item.id == cartItem.id);
+  //   if (itemIndex != -1) {
+  //     cartItens[itemIndex].quantity--;
+  //     cartItens[itemIndex].totalItemPrice -= cartItem.product.price;
+  //     cartItens.refresh();
+  //   }
+  // }
 
   void clearController() {
     cartItens = <CartItemModel>[].obs;

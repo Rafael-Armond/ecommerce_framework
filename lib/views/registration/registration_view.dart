@@ -74,7 +74,10 @@ class SignupView extends StatelessWidget {
                     child: Obx(
                       () => ElevatedButton(
                         child: const Text('Criar conta'),
-                        onPressed: _authController.isCadastroPreenchido
+                        onPressed: _authController.email.value.isNotEmpty &&
+                                _authController.password.value.isNotEmpty &&
+                                _authController.confirmPassword.value ==
+                                    _authController.password.value
                             ? () async {
                                 LoadingWidget.show(context);
                                 await _authController.signUp().then((sucess) {
@@ -87,7 +90,7 @@ class SignupView extends StatelessWidget {
                                             'Utilize seu email e senha para logar no aplicativo.');
                                   }
                                 });
-                                LoadingWidget.suppress();
+                                LoadingWidget.hide();
                               }
                             : null,
                       ),

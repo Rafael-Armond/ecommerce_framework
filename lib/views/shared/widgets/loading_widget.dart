@@ -8,7 +8,7 @@ class LoadingWidget {
     Overlay.of(context)?.insert(_overlayEntry!);
   }
 
-  static void suppress() {
+  static void hide() {
     _overlayEntry?.remove();
   }
 

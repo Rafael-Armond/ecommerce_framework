@@ -27,7 +27,6 @@ class SearchTextFormField extends StatelessWidget {
       ),
       autofocus: false,
       textInputAction: TextInputAction.search,
-      controller: _productsController.searchProductController,
       onChanged: (String text) =>
           _productsController.searchProductTerm.value = text,
     );
