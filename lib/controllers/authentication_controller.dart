@@ -13,8 +13,8 @@ class AuthenticationController extends GetxController {
 
   final UserRepository _userRepository;
 
-  Future<bool> signIn() async {
-    return await _userRepository.authenticateUser(email.value, password.value);
+  Future<void> signIn() async {
+    await _userRepository.authenticateUser(email.value, password.value);
   }
 
   Future<void> signOut() async {

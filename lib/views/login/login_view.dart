@@ -63,6 +63,7 @@ class LoginView extends StatelessWidget {
                             LoadingWidget.show(context);
                             try {
                               await _authController.signIn();
+                              await _productsController.getAllProducts();
                               Get.off(() => ProductsView());
                             } catch (e) {
                               Utils.showErrorSnackbar(

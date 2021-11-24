@@ -4,16 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class UserRepository implements IUserRepository {
   @override
-  Future<bool> authenticateUser(String email, String password) async {
-    try {
-      await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password);
-      return true;
-    } on FirebaseAuthException catch (e) {
-      Utils.showErrorSnackbar(
-          title: 'Falha na autenticação', message: 'Confira as credenciais');
-      return false;
-    }
+  Future<void> authenticateUser(String email, String password) async {
+    await FirebaseAuth.instance
+        .signInWithEmailAndPassword(email: email, password: password);
   }
 
   @override
