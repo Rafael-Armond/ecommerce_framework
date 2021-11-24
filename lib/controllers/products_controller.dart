@@ -1,6 +1,5 @@
 import 'package:flutter_firebase_ecommerce/repositories/products_repository.dart';
 import 'package:flutter_firebase_ecommerce/models/product_model.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductsController extends GetxController {
